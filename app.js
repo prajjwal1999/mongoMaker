@@ -5,6 +5,27 @@ const fs = require('fs');
 
 const app = express();
 const port = 3000;
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBC2DsH1mseAxMDLfVk44Yc0KFCIY4DhbM",
+  authDomain: "command-67bbe.firebaseapp.com",
+  projectId: "command-67bbe",
+  storageBucket: "command-67bbe.appspot.com",
+  messagingSenderId: "937677617269",
+  appId: "1:937677617269:web:6ab2c199d97eaff0ade03c",
+  measurementId: "G-QSR1NDT5SD"
+};
+
+// Initialize Firebase
+const app2 = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app2);
 
 // Multer configuration to restrict uploads to CSV files
 const upload = multer({
